@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入react的核心模块 支持我们书写react相关的语法 -->
+		<script src="js/react.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- react 支持操作dom的相关操作 -->
+		<script src="js/react-dom.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 支持JSX语法需要的模块 -->
+		<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.one{
+				border: 2px solid red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			
+		</div>
+		<div id="two">
+			
+		</div>
+		<!-- react.js 是Facebook推出的前端UI库
+		优势:
+		1.虚拟DOM操作；
+		2.更加高效的处理业务逻辑；
+		3.组件化开发
+		4.可以使用JSX语法（可以在js中书写HTML代码） -->
+	</body>
+	
+	<!-- 让浏览器支持jsx语法，需要将script中的type类型修改为type="text/babel" -->
+	<script type="text/babel">
+		let wrap = document.getElementById("wrap");
+		// 创建组件  方式一:
+		// 语法: let 组件名(首字母大写) React.createClass({
+		// 	render:function(){
+		// 		return 组件的内容部分
+		// 	}
+		// })
+		
+		let First = React.createClass({
+			render(){
+				return (
+				<div>
+				<h2>这是first内容</h2>
+				</div>
+				)
+			}
+		})
+		ReactDOM.render(<First/>,wrap);
+		
+		//方式二：
+		function Second(){
+			return (
+				<div>
+				<h2>这是second内容</h2>
+				</div>
+				)
+		}
+		ReactDOM.render(<Second/>,wrap);
+		//如何组件传值
+		//组件接收外部传过来的值
+		//使用props对象 每个组件都自带一个props属性对象
+		//该对象是只读的 定义输入属性的名和值
+		 let Third = React.createClass({
+			 render(){
+				 return (
+				 <div>
+					 <p>价格:{this.props.price}</p>
+					 <p>商品:{this.props.shop}</p>
+				 </div>
+				 )
+			 }
+		 })
+		 let a = "少伟";
+		ReactDOM.render((
+		<div>
+			<Third price="9.9元" shop="家灿"/>
+			<Third price="19.9元" shop={a}/>
+			<Second/>
+		</div>
+		),wrap);
+		
+		//组件中设置样式
+		//在React中设置类名 className
+		//style 设置样式，{}访问，React在解析时，会添加px单位
+		let sty = {backgroundColor:"blue",borderRadius:"50%",height:"300"};
+		let Four = React.createClass({
+			render(){
+				return (
+				<div className="one">
+					<p style={{color:"red",fontSize:"80"}}>家灿</p>
+					<p style={sty}>少伟</p>
+				</div>
+				)
+			}
+		});
+		ReactDOM.render(<Four/>,wrap);
+		
+	</script>
+</html>

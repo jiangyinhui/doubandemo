@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- 引入react的核心模块 支持我们书写react相关的语法 -->
+		<script src="js/react.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- react 支持操作dom的相关操作 -->
+		<script src="js/react-dom.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- 支持JSX语法需要的模块 -->
+		<script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#one{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			
+		</div>
+		<div id="two">
+			
+		</div>
+		<!-- react.js 是Facebook推出的前端UI库
+		优势:
+		1.虚拟DOM操作；
+		2.更加高效的处理业务逻辑；
+		3.组件化开发
+		4.可以使用JSX语法（可以在js中书写HTML代码） -->
+	</body>
+	
+	<!-- 让浏览器支持jsx语法，需要将script中的type类型修改为type="text/babel" -->
+	<script type="text/babel">
+		let wrap = document.getElementById("wrap");
+		let a = 9;
+		//创建DOM节点，渲染内容
+		// 一个标签DOM节点 结构有且只有一个根节点
+		// 参数1:小括号可以省略,标签内容可以使用{}灵活的获取表达式的值
+		ReactDOM.render((<div>
+		<p>家灿</p>
+		<p>{a}</p>
+		<p>少{8+9}伟</p>
+		<p>{a > 7 ? 6 : 3}</p>
+		</div>),wrap);
+		
+		let two = document.getElementById("two");
+		//React中的遍历
+		let names = ["家灿","少伟","潘坤","俊恒"];
+		ReactDOM.render((
+		<ul>
+			{
+			   names.map((v,i) => {
+				   return <li key={i}>{v}---{i}</li>
+			   })
+			}
+		</ul>
+		),two);
+		
+		let stu = {name:"明",sex:"lady"};
+		//{}大括号不允许直接使用对象,可以使用对象的key
+		//React遍历的第二种写法，
+		let arrNames = [<li>亚强</li>,<li>鲈鱼</li>,<li>郑波</li>,<li>白易冉</li>];
+		ReactDOM.render((
+		   <ul>
+			   {
+				   arrNames
+			   }
+		   </ul>
+		),two);
+		
+		ReactDOM.render((
+		   <ul>
+			   {
+				   stu.name
+			   }
+		   </ul>
+		),two);
+	</script>
+</html>
