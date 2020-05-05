@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/moneyCount.css"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<!--预加载界面-->
+		<div id="lodingwrap">
+			<div id="loding">0%</div>
+		</div>
+		<!--数钱项目的第一个界面-->
+		<div id="page1">
+			<!--挑战的图片-->
+			<img class="animated bounceIn" src="img/tiaozhan.png" alt="" id="challenge" />
+			<!--你的数钱速度图片-->
+			<img class="animated wobble" src="img/yingqu.png" alt="" id="winSlogan" />
+			<!--开始按钮-->
+			<img class="animated pulse infinite" src="img/start_game.png" alt="" id="start" />
+			<!--🖐用户引导-->
+			<img class="animated fadeOut infinite" src="img/shou.png" alt="" id="hand" />
+			<!--按钮切换的图片-->
+			<img src="img/p1_btns_wrap.png" alt="" class="button_bg" />
+			<!--数钱榜图片-->
+			<img src="img/ranking.png" alt="" class="rank" />
+			<!--活动规则-->
+			<img src="img/activity_rule.png" alt="" class="rule" />
+			<!--活动奖品-->
+			<img src="img/prize.png" alt="" class="prize" />
+			<!--奖券使用说明按钮-->
+			<img src="img/shiyong.png" alt="" class="explain" />
+		</div>
+		<!--第二个界面-->
+		<div id="page2">
+			<!--对话框-->
+			<img src="img/p2_kuang.png" alt="" id="outline" />
+			<!--对话框里面的内容-->
+			<img src="img/p2_txt1.png" alt="" id="textTalk" />
+			<!--设置数钱数和时间模块-->
+			<div id="time">
+				<span class="count_num">0</span>
+				<span class="count_num">0</span>
+				<span class="count_num">0</span>
+				<span class="time_clock">10</span>
+			</div>
+			<!--数钱，滑动的钱-->
+			<div id="money_wrap">
+				<img src="img/p2_qian.jpg" alt="" id="money" />
+			</div>
+			<!--数钱的手-->
+			<img class="animated fadeOutUp infinite" src="img/p2_shou.png" alt="" id="handMoney" />
+			<!--砖块部分-->
+			<img src="img/p2_zhuan.png" alt="" id="brick" />
+		</div>
+		<!--第三个界面部分-->
+		<div id="page3">
+			<!--恭喜你已获得图片-->
+			<img src="img/p3_acquire.png" alt="" id="acquire" />
+			<!--游戏结束获得的钱数-->
+			<p id="resultMoney">¥0</p>
+			<p id="resultEva">没有办法，你已经超神了!</p>
+			<!--设置最好成绩和当前排名-->
+			<div id="best_wrap">
+				我的辉煌战绩:¥900,当前排名:66名
+			</div>
+			<img src="img/p3_again.png" alt="" id="again" />
+			<img src="img/p3_share_btn.png" alt="" id="share" />
+			<!--按钮切换的图片-->
+			<img src="img/p1_btns_wrap.png" alt="" class="button_bg" />
+			<!--数钱榜图片-->
+			<img src="img/ranking.png" alt="" class="rank" />
+			<!--活动规则-->
+			<img src="img/activity_rule.png" alt="" class="rule" />
+			<!--活动奖品-->
+			<img src="img/prize.png" alt="" class="prize" />
+			<!--奖券使用说明按钮-->
+			<img src="img/shiyong.png" alt="" class="explain" />
+		</div>
+		<!--填写个人资料界面-->
+		<div id="user_alert" class="alert_wrap">
+			<!--关闭个人资料的按钮-->
+			<img src="img/close.png" alt="" class="close" />
+			<!--使用form表单-->
+			<form action="" id="form_alert">
+				<input placeholder="姓名" type="text" id="username" />
+				<input placeholder="电话" type="text" id="phone" />
+				<input placeholder="地址" type="text" id="address" />
+				<!--提交按钮-->
+				<input type="button" id="submit" />
+			</form>
+		</div>
+		<!--数钱榜提示框-->
+		<div class="alert_wrap" id="rank_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" alt="" class="close" />
+			<!--排名模块-->
+			<div id="rank_wrap">
+				<ul>
+					<li>
+						<span class="rankGrade"></span>
+						<img src="img/shizhong.png" alt="" class="p_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rankGrade"></span>
+						<img src="img/shizhong.png" alt="" class="p_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rankGrade"></span>
+						<img src="img/shizhong.png" alt="" class="p_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rankGrade">4</span>
+						<img src="img/shizhong.png" alt="" class="p_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+					<li>
+						<span class="rankGrade">5</span>
+						<img src="img/shizhong.png" alt="" class="p_clock" />
+						<span class="name">暂无</span>
+						<span class="score">0分</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--活动规则说明提示框-->
+		<div class="alert_wrap" id="rule_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" alt="" class="close" />
+			<!--规则内容部分-->
+			<div class="content_wrap">
+				<h1>活动规则</h1>
+				<p>
+					1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！<br /> 2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。 <br /> 3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。
+					<br /> 4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。 <br /> 5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上。
+				</p>
+			</div>
+		</div>
+		<!--活动奖品-->
+		<div class="alert_wrap" id="price_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" alt="" class="close" />
+			<div class="content_wrap">
+				<h1>活动奖品</h1>
+				<p>
+					一等奖1人：价值1488元7号楼1晚豪华标间免费房券1张，并可享康体项目3折优惠；<br /><br /> 二等奖20人：100元订房代金券每人1张，并可享康体项目4折优惠；
+					<br /><br /> 三等奖50人：50元订房代金券每人1张，并可享康体项目5折优惠。
+					<br /><br /> 奖品的有效期：2016年5月20日至6月15日（周五、周六及法定节假日不可用）
+				</p>
+			</div>
+		</div>
+		<!--奖券使用说明部分-->
+		<div class="alert_wrap" id="explain_alert">
+			<!--关闭按钮-->
+			<img src="img/close.png" alt="" class="close" />
+			<div class="content_wrap">
+				<h1>奖券使用说明</h1>
+				<p>
+					1、每人有多次游戏机会，但成绩只能提交一次，且提交之后不能更改！<br /> 2、提交成绩时要提供姓名及手机号码作为兑奖凭证，因用户本人未在规定时间内提供正确的手机号码造成的奖品损失，由用户个人承担。
+					<br /> 3、活动时间为2016年5月11日-5月19日24:00，活动结束后将在“雾灵山庄”微信公布中奖名单。
+					<br /> 4、获奖规则：系统将根据大家提交的成绩，按照由多到少的规则进行排行，排名第1的网友将获得一等奖，排名第2-第21位的网友将分获二等奖，以此类推。
+					<br /> 5、奖品的发放：活动结束后，将由工作人员与您取得联系，并将相应的卡券编号发送到您提供的手机号码上。
+					<br />
+				</p>
+			</div>
+		</div>
+		
+		<!--分享模块-->
+		<div class="alert_wrap" id="share_wrap">
+			<img src="img/p3_share.png"/>
+		</div>
+	</body>
+	<script src="js/JQ.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/touch.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/moneyCount.js" type="text/javascript" charset="utf-8"></script>
+	
+	
+</html>
